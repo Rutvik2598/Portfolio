@@ -21,13 +21,7 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I’m a motivated and skilled Software Engineer with 4 years of
-            experience building and optimizing mobile and web applications.
-            Currently pursuing a Master’s in Computer Science at North Carolina
-            State University, I’m passionate about Software Engineering, Machine
-            Learning, and System Design. I enjoy turning ideas
-            into reliable, scalable solutions and am eager to apply my technical
-            expertise and academic knowledge to challenging projects.
+            Building Reliable Mobile & Web Experiences | Passionate Software Engineer & ML Enthusiast
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
