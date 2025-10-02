@@ -55,7 +55,8 @@ const categories = [
 ]
 
 export const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState('all')
+  // initialize to 'All' so the All tab is selected on first load
+  const [activeCategory, setActiveCategory] = useState('All')
 
   const filteredSkills = skills.filter(
     skill => activeCategory === 'All' || skill.category === activeCategory
