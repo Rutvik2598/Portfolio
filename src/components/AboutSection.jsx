@@ -1,4 +1,4 @@
-import { Brain, Code, Network } from 'lucide-react'
+import { Brain, Code, Cpu, Network } from 'lucide-react'
 
 export const AboutSection = () => {
   return (
@@ -15,25 +15,21 @@ export const AboutSection = () => {
             </h3>
 
             <p className='text-muted-foreground'>
-              I’m a Master’s student in Computer Science at NC State, with a
-              Bachelor’s in Computer Science from the University of Pune. I have
-              4 years of industry experience in mobile and web development
-              across frontend and backend, and I recently completed a summer
-              internship at Intuit, where I integrated AI-powered features into
-              the QuickBooks Android app. My interests include software
-              engineering, system design, machine learning, and exploring
-              agentic AI solutions.
+              I&apos;m a Master&apos;s student in Computer Science at NC State, with a
+              Bachelor&apos;s from the University of Pune and 4 years of industry
+              experience. I&apos;ve worked across mobile, web, backend, AI
+              integration, and high-performance computing, picking up
+              whatever the problem demands. My interests span software
+              engineering, system design, machine learning, and agentic AI.
             </p>
 
             <p className='text-muted-foreground'>
-              Beyond my coursework and professional roles, I am conducting
-              research in networking for IoT devices using OpenThread, working
-              on distributed communication protocols that enable efficient,
-              secure device connectivity. Outside of technology, I am passionate
-              about traveling and hiking, often exploring trails and immersing
-              myself in nature. I also enjoy video games as a way to relax.
-              Altogether, these experiences reflect my drive to learn, build,
-              and explore—both in software and beyond.
+              Beyond coursework and industry work, I conduct research in IoT
+              networking at NC State, exploring distributed protocols for
+              secure and efficient device connectivity. I&apos;m drawn to problems
+              that sit at the intersection of systems and intelligence, and I
+              enjoy building things that work at every layer of the stack.
+              Outside of tech, I unwind on hiking trails or deep in a video game.
             </p>
 
             <div className='flex flex-col sm:flex-row gap-4 pt-4 justify-center'>
@@ -42,7 +38,7 @@ export const AboutSection = () => {
               </a>
 
               <a
-                href='https://drive.google.com/file/d/1V2dvf-p_RVP2vcLllWfWQiz2yYN-7cwQ/view?usp=sharing'
+                href='https://drive.google.com/file/d/1LG85BZ49bnMjPip1hvxCiIBGIUygOmrT/view?usp=sharing'
                 target='_blank'
                 className='px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300'
               >
@@ -60,7 +56,7 @@ export const AboutSection = () => {
                   </div>
                   <div className='text-left'>
                     <h4 className='font-semibold text-lg'>
-                      Mobile & Web Development
+                      Mobile &amp; Web Development
                     </h4>
                     <p className='text-muted-foreground'>
                       Building scalable Android apps and full-stack web
@@ -77,7 +73,7 @@ export const AboutSection = () => {
                   </div>
                   <div className='text-left'>
                     <h4 className='font-semibold text-lg'>
-                      AI & Machine Learning
+                      AI &amp; Machine Learning
                     </h4>
                     <p className='text-muted-foreground'>
                       Integrating intelligent models into real-world apps to
@@ -94,11 +90,28 @@ export const AboutSection = () => {
                   </div>
                   <div className='text-left'>
                     <h4 className='font-semibold text-lg'>
-                      Systems & Networking
+                      Systems &amp; Networking
                     </h4>
                     <p className='text-muted-foreground'>
                       Researching IoT networking protocols and their
                       applications in smart home devices.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='gradient-border p-6 card-hover'>
+                <div className='flex items-start gap-4'>
+                  <div className='p-3 rounded-full bg-primary/10'>
+                    <Cpu className='h-6 w-6 text-primary' />
+                  </div>
+                  <div className='text-left'>
+                    <h4 className='font-semibold text-lg'>
+                      GPU &amp; High-Performance Computing
+                    </h4>
+                    <p className='text-muted-foreground'>
+                      Writing CUDA kernels and optimizing parallel workloads
+                      for maximum throughput on modern GPU architectures.
                     </p>
                   </div>
                 </div>

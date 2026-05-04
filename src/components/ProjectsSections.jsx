@@ -2,7 +2,26 @@ import { ArrowRight, GithubIcon } from 'lucide-react'
 
 const projects = [
   {
+    id: 0,
+    title: 'GitHub Logs Analyzer',
+    description:
+      'An AI-powered GitHub Actions failure analyzer. When your CI fails, it automatically reads the logs, identifies the root cause, and posts a detailed fix suggestion as a PR comment — supporting Anthropic, Gemini, OpenAI, and Groq.',
+    image: '/projects/github_logs_analyzer.png',
+    githubUrl: 'https://github.com/Rutvik2598/github-logs-analyzer',
+    marketplaceUrl: 'https://github.com/marketplace/actions/github-logs-analyzer',
+    tags: ['TypeScript', 'GitHub Actions', 'AI', 'Anthropic', 'Gemini', 'OpenAI', 'Groq', 'CI/CD']
+  },
+  {
     id: 1,
+    title: 'AudioScribe',
+    description:
+      'An Android app that records audio, transcribes it in real time using Gemini 2.5 Flash, and auto-generates summaries. Features a foreground service pipeline, silence detection, phone call handling, and retry logic with exponential backoff.',
+    image: '/projects/audioscribe.png',
+    githubUrl: 'https://github.com/Rutvik2598/AudioScribe',
+    tags: ['Android', 'Kotlin', 'Jetpack Compose', 'Gemini API', 'Hilt', 'Room', 'Coroutines', 'AI']
+  },
+  {
+    id: 2,
     title: 'Recipe Recommender',
     description:
       'An AI-powered web application that generates personalized recipe suggestions tailored to user preferences and dietary restrictions. Built with React (frontend) and Node.js (backend), leveraging the Gemini API to enhance user experience.',
@@ -11,7 +30,7 @@ const projects = [
     tags: ['React', 'Node.js', 'TypeScript', 'Gemini API', 'AI']
   },
   {
-    id: 2,
+    id: 3,
     title: 'PostPolice',
     description:
       `PostPolice delivers high-performance fact-checking at the edge. By leveraging Groq for rapid AI inference and local semantic matching via Hugging Face, it provides instant verification while minimizing latency and cost.`,
@@ -20,7 +39,16 @@ const projects = [
     tags: ['AI', 'Groq', 'Valkey', 'Hugging Face', 'Edge Computing', 'Fact-Checking']
   },
   {
-    id: 3,
+    id: 4,
+    title: 'Tunable CUDA SGEMM',
+    description:
+      'A CUDA SGEMM benchmark comparing four implementations — naive, shared-memory register-tiled (tunable), cuBLAS, and CUTLASS — on FP32 matrix multiplication. The tunable kernel is templated on tile parameters selected per matrix size via a 431-kernel sweep, reaching ~19.6 TFLOP/s (~53% of cuBLAS) on an RTX 5080.',
+    image: '/projects/tunable_matmul.png',
+    githubUrl: 'https://github.com/Rutvik2598/Tunable_MatMul_MatVec',
+    tags: ['CUDA', 'C++', 'SGEMM', 'cuBLAS', 'CUTLASS', 'GPU', 'HPC', 'Parallel Programming']
+  },
+  {
+    id: 5,
     title: 'BattleZone',
     description:
       `Built on a custom WebGL engine from scratch, this project features per-material Phong lighting, procedural terrain generation, and imported OBJ models. It combines acceleration-based physics with a responsive HUD and minimap for a complete arcade experience.`,
@@ -29,7 +57,7 @@ const projects = [
     tags: ['WebGL', 'Game Development', 'JavaScript', '3D Graphics', 'Remake', 'Creative Mode']
   },
   {
-    id: 4,
+    id: 6,
     title: 'General Insurance Frontend',
     description:
       'A responsive web application for managing insurance policies, claims, and customer inquiries. Designed with Angular to deliver a seamless and interactive user experience.',
@@ -39,7 +67,7 @@ const projects = [
     tags: ['Angular', 'TypeScript', 'Insurance', 'Frontend']
   },
   {
-    id: 5,
+    id: 7,
     title: 'General Insurance Backend',
     description:
       'A scalable backend service for an insurance management system, supporting policies, claims, and customer data. Implemented with Spring Boot in a microservices architecture and integrated with Oracle database for secure data handling.',
@@ -48,7 +76,7 @@ const projects = [
     tags: ['Spring Boot', 'Java', 'Oracle DB', 'Backend']
   },
   {
-    id: 6,
+    id: 8,
     title: 'Social Media Application',
     description:
       'A social networking Android application that connects users through shared interests and activities. Features real-time interactions, authentication, and cloud storage using Firebase.',
@@ -57,7 +85,7 @@ const projects = [
     tags: ['Android', 'Firebase', 'Java', 'Mobile App', 'Social Media']
   },
   {
-    id: 7,
+    id: 9,
     title: 'Personal Portfolio Website',
     description:
       'A modern and responsive personal portfolio website showcasing projects, skills, and professional experience. Built using React and styled with Tailwind CSS for a clean, minimal design.',
@@ -66,7 +94,7 @@ const projects = [
     tags: ['React', 'Tailwind CSS', 'JavaScript', 'Frontend']
   },
   {
-    id: 8,
+    id: 10,
     title: 'Handwritten Digit Recognition',
     description:
       'An optimized implementation of handwritten digit recognition (MNIST dataset) using parallel programming techniques. Built with C++ and CUDA to accelerate neural network training on GPUs compared to CPU execution.',
@@ -75,7 +103,7 @@ const projects = [
     tags: ['C++', 'CUDA Programming', 'Neural Networks']
   },
   {
-    id: 9,
+    id: 11,
     title: 'Guns and Knives Detection',
     description:
       'A deep learning-based object detection system for identifying weapons (guns and knives) in images and video streams. Implemented with Python and YOLO for real-time detection capabilities.',
@@ -90,7 +118,7 @@ const projects = [
     ]
   },
   {
-    id: 10,
+    id: 12,
     title: 'Music Genre Classification',
     description:
       'A machine learning project to classify music tracks into genres. Implemented and compared multiple models including SVM, Random Forest, and Neural Networks to evaluate accuracy and performance.',
@@ -106,7 +134,7 @@ const projects = [
     ]
   },
   {
-    id: 11,
+    id: 13,
     title: 'Interplanetary Shock Predictor',
     description:
       'A predictive model that estimates interplanetary shocks based on solar coronal mass ejections (CME). Utilizes regression techniques to calculate the duration between CME events and shock arrivals, aiding in space weather forecasting.',
@@ -152,9 +180,18 @@ export const ProjectsSections = () => {
                   ))}
                 </div>
                 <h3 className='text-xl font-semibold mb-1'>{project.title}</h3>
-                <p className='text-muted-foreground text-sm mb-4'>
+                <p className='text-muted-foreground text-sm mb-2'>
                   {project.description}
                 </p>
+                {project.marketplaceUrl && (
+                  <a
+                    href={project.marketplaceUrl}
+                    target='_blank'
+                    className='text-xs text-primary font-medium mb-4 inline-block hover:underline'
+                  >
+                    🟢 Live on GitHub Marketplace
+                  </a>
+                )}
                 <div className='flex justify-between items-center'>
                   <div className='flex space-x-3 mx-auto'>
                     <a

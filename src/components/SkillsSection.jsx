@@ -31,6 +31,7 @@ const skills = [
   { name: 'Machine Learning', level: 78, category: 'AI & Data' },
   { name: 'Data Analytics', level: 80, category: 'AI & Data' },
   { name: 'TensorFlow/PyTorch', level: 75, category: 'AI & Data' },
+  { name: 'LLM APIs', level: 82, category: 'AI & Data' },
 
   { name: 'C/C++', level: 80, category: 'Systems & Networking' },
   { name: 'IoT (OpenThread)', level: 78, category: 'Systems & Networking' },
@@ -38,6 +39,7 @@ const skills = [
   { name: 'System Design', level: 74, category: 'Systems & Networking' },
 
   { name: 'Git/GitHub', level: 97, category: 'Tools & Practices' },
+  { name: 'GitHub Actions', level: 85, category: 'Tools & Practices' },
   { name: 'Agile/Scrum', level: 95, category: 'Tools & Practices' },
   { name: 'Figma', level: 95, category: 'Tools & Practices' },
   { name: 'Jira', level: 95, category: 'Tools & Practices' }

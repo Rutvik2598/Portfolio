@@ -1,12 +1,12 @@
 export const ExperienceSection = () => {
   const experiences = [
     {
-      role: 'Research Assistant',
+      role: 'Graduate Research Assistant',
       company: 'North Carolina State University',
       location: 'Raleigh, NC',
       duration: 'Jan 2025 - Present',
       description:
-        '• Architected a scalable Multi-PAN OpenThread network to support 64+ concurrent IoT devices, utilizing a custom hub-and-spoke IPv6 routing topology to overcome standard mesh limitations\n• Optimized low-level performance by engineering modifications to the OpenThread protocol stack and nRF52840 radio drivers, enabling concurrent Multi-PAN communication on a single radio instance\n• Validated system reliability by benchmarking against conventional Thread networks, confirming the architecture achieves equivalent throughput and latency performance to standard single-PAN implementations'
+        '• Architected a scalable Multi-PAN OpenThread network for a CISCO-funded initiative to support 64+ concurrent IoT devices, utilizing a custom hub-and-spoke IPv6 routing topology to overcome standard mesh limitations\n• Optimized low-level performance by engineering C/C++ modifications to the OpenThread protocol stack and nRF52840 radio drivers, enabling concurrent Multi-PAN communication on a single radio instance\n• Validated system reliability by benchmarking against conventional Thread networks, confirming the architecture achieves equivalent throughput and latency performance to standard single-PAN implementations'
     },
     {
       role: 'Software Engineering Intern',
@@ -14,7 +14,7 @@ export const ExperienceSection = () => {
       location: 'Mountain View, CA',
       duration: 'May 2025 - Aug 2025',
       description:
-        '• Engineered AI-powered Smart Drafted Emails in QuickBooks Android app, boosting invoice sent-to-paid ratio and reducing payment delays\n• Designed customer-insight–driven logic to dynamically personalize invoice email tone and subject\n• Developed reusable software components for the internal shared UI library, standardizing UI elements that were subsequently adopted by multiple Intuit Android teams to improve development velocity\n• Established ownership of the full feature lifecycle (design, dev, testing), collaborating cross-functionally with backend, design, and product teams to ensure a defect-free production release'
+        '• Engineered AI-powered Smart Drafted Emails in QuickBooks ecosystem, boosting invoice sent-to-paid ratio and reducing payment delays\n• Collaborated cross-functionally with backend and AI/ML teams to integrate intelligent automation into enterprise workflows, ensuring scalable and defect-free production releases\n• Developed reusable UI components for the internal shared library, standardizing UI elements that were subsequently adopted by multiple Intuit teams to improve development velocity'
     },
     {
       role: 'Software Engineer',
@@ -22,7 +22,7 @@ export const ExperienceSection = () => {
       location: 'Pune, India',
       duration: 'Sep 2021 - June 2024',
       description:
-        '• Shipped features for the Google Home Android application, a large-scale product connecting millions of users to smart home devices globally\n• Implemented robust state management logic using Kotlin Flows for device provisioning workflows, ensuring real-time UI synchronization with hardware states during complex setup processes\n• Engineered fully accessible UI components compliant with TalkBack standards, ensuring inclusive usability for visually impaired users and meeting strict product accessibility requirements\n• Resolved complex concurrency issues and memory bottlenecks by profiling application performance, directly reducing crash rates and improving scroll performance for data-heavy device lists\n• Developed comprehensive Unit and UI automation tests (Espresso, Mockito), reducing manual regression testing time by 40% and accelerating the CI/CD release pipeline'
+        '• Shipped features for the Google Home Android application, a large-scale product connecting millions of users to smart home devices globally\n• Implemented robust state management logic using Kotlin Flows for device provisioning workflows, ensuring real-time UI synchronization with hardware states during complex setup processes\n• Engineered fully accessible UI components compliant with TalkBack standards, ensuring inclusive usability for visually impaired users and meeting strict product accessibility requirements\n• Resolved complex concurrency issues and memory bottlenecks by profiling application performance, directly reducing crash rates and improving scroll performance for data-heavy device lists\n• Led a team of 3 engineers to architect and develop comprehensive UI and Unit automation testing frameworks across Android and iOS, reducing manual regression testing time by 40% and accelerating the CI/CD release pipeline'
     },
     {
       role: 'Software Engineer',
@@ -30,7 +30,7 @@ export const ExperienceSection = () => {
       location: 'Pune, India',
       duration: 'Oct 2020 - Sep 2021',
       description:
-        '• Architected and deployed scalable backend microservices on AWS (EC2, Docker) for a high-traffic insurance platform, ensuring 99.9% availability\n• Built optimized RESTful APIs using Java and Spring Boot to handle complex search queries, utilizing database indexing to improve response times by 30%\n• Designed modular Angular frontend components for policy management, enhancing code reusability and standardizing the user experience across the platform'
+        '• Architected secure cloud infrastructure on AWS (EC2, S3) within Linux environments, orchestrating Docker containers to ensure 99.9% availability for a high-traffic enterprise platform\n• Engineered Java-based RESTful APIs and core business logic to process high-volume data streams, optimizing query execution and improving overall response times by 30%\n• Identified and resolved critical system bottlenecks by troubleshooting complex SQL queries and implementing targeted caching strategies, significantly improving transaction throughput\n• Automated backend release cycles by configuring CI/CD pipelines, enabling seamless and predictable deployments to the AWS environment\n• Designed modular Angular frontend components enhancing code reusability and standardizing the user experience'
     },
     {
       role: 'Student Developer Intern',
@@ -66,7 +66,11 @@ export const ExperienceSection = () => {
                   <p className='text-sm text-gray-500'>{exp.duration}</p>
                 </div>
 
-                <p className='mt-3'>{exp.description}</p>
+                <ul className='mt-3 space-y-1'>
+                  {exp.description.split('\n').map((bullet, i) => (
+                    <li key={i}>{bullet}</li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
