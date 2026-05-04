@@ -8,20 +8,37 @@ import {
   Send
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
+import emailjs from '@emailjs/browser'
+
+const EMAILJS_SERVICE_ID = 'service_o9e3ddc'
+const EMAILJS_TEMPLATE_ID = 'template_2nlyp4g'
+const EMAILJS_PUBLIC_KEY = 'jD16OZYHt4Kb0amxF'
 
 export const ContactSection = () => {
-
+  const formRef = useRef(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [status, setStatus] = useState(null) // 'success' | 'error' | null
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setStatus(null)
 
-    setTimeout(() => {
-      alert('Message sent successfully!')
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      )
+      setStatus('success')
+      formRef.current.reset()
+    } catch {
+      setStatus('error')
+    } finally {
       setIsSubmitting(false)
-    }, 1500)
+    }
   }
 
   return (
@@ -32,7 +49,7 @@ export const ContactSection = () => {
         </h2>
 
         <p className='text-center text-muted-foreground mb-12 max-w-2xl mx-auto'>
-          I’d love to hear from you! Whether you have a question, feedback, or
+          I&apos;d love to hear from you! Whether you have a question, feedback, or
           just want to chat, feel free to reach out.
         </p>
 
@@ -44,7 +61,6 @@ export const ContactSection = () => {
                 <div className='p-3 rounded-full bg-primary/10'>
                   <Mail className='h-6 w-6 text-primary' />
                 </div>
-
                 <div>
                   <h4 className='font-medium'> Email </h4>
                   <a
@@ -60,11 +76,10 @@ export const ContactSection = () => {
                 <div className='p-3 rounded-full bg-primary/10'>
                   <Phone className='h-6 w-6 text-primary' />
                 </div>
-
                 <div>
                   <h4 className='font-medium'> Phone </h4>
                   <a
-                    href='tel:+12099075243'
+                    href='tel:+13099075243'
                     className='text-muted-foreground hover:text-primary transition-colors'
                   >
                     +1 (309) 907-5243
@@ -76,15 +91,13 @@ export const ContactSection = () => {
                 <div className='p-3 rounded-full bg-primary/10'>
                   <MapPin className='h-6 w-6 text-primary' />
                 </div>
-
                 <div>
                   <h4 className='font-medium'> Location </h4>
-                  <a className='text-muted-foreground hover:text-primary transition-colors'>
-                    Raleigh, NC, USA
-                  </a>
+                  <span className='text-muted-foreground'>Raleigh, NC, USA</span>
                 </div>
               </div>
             </div>
+
             <div className='pt-8'>
               <h4 className='font-medium mb-4'>Connect With Me</h4>
               <div className='flex space-x-4 justify-center'>
@@ -116,12 +129,9 @@ export const ContactSection = () => {
           <div className='bg-card p-8 rounded-lg shadow-xs'>
             <h3 className='text-2xl font-semibold mb-6'>Send a Message</h3>
 
-            <form className='space-y-6'>
+            <form ref={formRef} onSubmit={handleSubmit} className='space-y-6'>
               <div>
-                <label
-                  htmlFor='name'
-                  className='block text-sm font-medium mb-2'
-                >
+                <label htmlFor='name' className='block text-sm font-medium mb-2'>
                   Your Name
                 </label>
                 <input
@@ -135,10 +145,7 @@ export const ContactSection = () => {
               </div>
 
               <div>
-                <label
-                  htmlFor='email'
-                  className='block text-sm font-medium mb-2'
-                >
+                <label htmlFor='email' className='block text-sm font-medium mb-2'>
                   Your Email
                 </label>
                 <input
@@ -152,28 +159,35 @@ export const ContactSection = () => {
               </div>
 
               <div>
-                <label
-                  htmlFor='message'
-                  className='block text-sm font-medium mb-2'
-                >
+                <label htmlFor='message' className='block text-sm font-medium mb-2'>
                   Your Message
                 </label>
                 <textarea
                   id='message'
                   name='message'
                   required
+                  rows={5}
                   className='w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none'
                   placeholder="Hello, I'd like to get in touch with you..."
                 />
               </div>
 
+              {status === 'success' && (
+                <p className='text-sm text-green-500 font-medium'>
+                  Message sent! I&apos;ll get back to you soon.
+                </p>
+              )}
+              {status === 'error' && (
+                <p className='text-sm text-red-500 font-medium'>
+                  Something went wrong. Please try again or email me directly.
+                </p>
+              )}
+
               <button
                 type='submit'
                 disabled={isSubmitting}
-                onClick={handleSubmit}
                 className={cn(
-                  'cosmic-button w-full flex items-center justify-center gap-2',
-                  ''
+                  'cosmic-button w-full flex items-center justify-center gap-2'
                 )}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
